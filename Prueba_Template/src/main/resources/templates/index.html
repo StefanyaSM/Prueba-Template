@@ -164,7 +164,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3 th:text="${ordenes.size()}"></h3>
+                <h3 th:text="${ordenes.size()}">0</h3>
                 <p>Orders</p>
               </div>
 			  
@@ -172,10 +172,7 @@
                 <i class="ion ion-bag"></i>
               </div>
 			  
-			  <a class="small-box-footer"
-			         data-toggle="collapse"
-			         href="#ordersDrop"
-			         role="button">
+			  <a class="small-box-footer" data-toggle="collapse" href="#ordersDrop" role="button">
 			         More info <i class="fas fa-chevron-down"></i>
 			      </a>
 			    </div>
@@ -184,23 +181,24 @@
 				<div class="collapse" id="ordersDrop">
 				    <div class="card card-body p-2">
 				      <ul class="mb-0 pl-3">
-				        <li th:each="o : ${ordenes}"
-				            th:text="${o.folio}">1001</li>
+				        <li th:each="o : ${ordenes}" th:text="${o.folio}">1001</li>
 				      </ul>
 				    </div>
 				  </div>
-				  </div>
+				 </div>
   <!---->
   
           <!-- ./col -->
 		  
-		  
+		  <!--MORE INFO cuadro verde-->
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
+				<h3>
+				  <span th:text="${brate}">0</span>
+				  <sup style="font-size:20px">%</sup>
+				</h3>
                 <p>Bounce Rate</p>
               </div>
               <div class="icon">
@@ -208,9 +206,25 @@
               </div>
 			  
 			 
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+			  <a class="small-box-footer" data-toggle="collapse" href="#bounceDrop" role="button">
+			          More info <i class="fas fa-chevron-down"></i>
+				</a>
           </div>
+		  
+		  <div class="collapse" id="bounceDrop">
+			<div class="card card-body p-2">
+				 <ul class="mb-0 pl-3">
+					<li th:each="b : ${listaBRate}" th:text="${b.estado}">Funciona</li>
+					</ul>
+			  </div>
+		  </div>
+	  </div>
+
+		  
+		  
+		  
+		  <!--MORE INFO cuadro amarillo-->
+
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
@@ -226,6 +240,9 @@
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+		  
+		  
+		  
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
