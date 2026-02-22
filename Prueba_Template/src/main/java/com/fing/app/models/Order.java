@@ -6,21 +6,31 @@ public class Order {
 	private String usuario;
 
 	
-	public String getUsuario() {
-		return usuario;
+	public Order() { //constructor vacio
 	}
 
+	
+	public Order(int i) { //constructor con int
+	    this.folio = i;
+	}
+
+	
+	//setters y getters
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-
-	public int getFolio() {
-		return folio;
-	}
-
 	public void setFolio(int folio) {
 		this.folio = folio;
 	}
+	
+	
+	public String getUsuario() {
+		return usuario;
+	}
+	public int getFolio() {
+		return folio;
+	}
+	
 	
 	
 

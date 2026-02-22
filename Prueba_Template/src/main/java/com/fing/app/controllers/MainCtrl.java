@@ -19,14 +19,17 @@ public class MainCtrl {
 		
 		ArrayList<Order> lista= new ArrayList<>();
 		
-		lista.add(new Order());
-	    lista.add(new Order());
-	    lista.add(new Order());
-	    lista.add(new Order());
-	    lista.add(new Order());
+		lista.add(new Order(100));
+	    lista.add(new Order(101));
+	    lista.add(new Order(102));
+	    lista.add(new Order(103));
+	    lista.add(new Order(104));
+	    lista.add(new Order(105));
 
 	    model.addAttribute("ordenes", lista);
-	    model.addAttribute("msg", "Hola");
+	    
+	    
+	    model.addAttribute("msg", "Proyecto con plantilla de AdminLTE3"); //titulo pag
 	    
 	    
 	    //Nombre de usuario= stefanya saldaña 
@@ -37,7 +40,7 @@ public class MainCtrl {
 	    model.addAttribute("usuarioNom", usuario.getUsuario());
         
 
-		
+		 
 		
 		
 		return "index";
