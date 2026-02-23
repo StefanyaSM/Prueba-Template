@@ -2,7 +2,10 @@ package com.fing.app.controllers;
 
 import java.util.ArrayList;
 
+
 import com.fing.app.models.Order;
+import com.fing.app.models.Users;
+import com.fing.app.models.Visitors;
 import com.fing.app.models.BRate;
 
 import org.springframework.stereotype.Controller;
@@ -64,8 +67,33 @@ public class MainCtrl {
 
         model.addAttribute("brate", porcentajeFinal);
         model.addAttribute("listaBRate", lista2);
+        
+        
+        
+        
+        
+        //cuadro amarillo
+        
+        ArrayList<Users> listaUsers = new ArrayList<>();
+        listaUsers.add(new Users("Stefanya"));
+        listaUsers.add(new Users("Diana"));
+        listaUsers.add(new Users("Joaquin"));
+        listaUsers.add(new Users("Raul"));
+
+        model.addAttribute("listaUsers", listaUsers);
+        
+        
+        
+        
+        //cuadro rojo
 	    
-	    
+        ArrayList<Visitors> listaVisitors = new ArrayList<>();
+        
+        for (int i = 1; i <= 15; i++) {
+            listaVisitors.add(new Visitors("Visitante " + i));
+        }
+        
+        model.addAttribute("listaVisitors", listaVisitors);
 	    
 	    
 		 
